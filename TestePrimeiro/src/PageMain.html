@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/PageMainStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Wikilore</title>
+</head>
+<body>
+    <div class="EstruturaMain">
+        <header class="TopBar">
+            <button id="logoffBtn" title="Logoff"><a href="index.html"><i class="bi bi-box-arrow-left"></i></a></button>
+            <span class="moveWindow"></span>
+            <button id="minimizeBtn" title="Minimizar"><i class="bi bi-dash-lg"></i></button>
+            <button id="maxmizeBtn" title="Maximizar"><i class="bi bi-fullscreen"></i></button>
+            <button id="closeBtn" title="Fechar"><i class="bi bi-x-lg"></i></button>
+        </header>
+        <aside class="LeftBar">
+            <button data-open id="LeftBar01" data-id="Info-Comandos" style="display: none;">
+                InfoComando
+            </button>
+            <button id="LeftBar02" data-id="All-Pedidos" title="Comandas - Ctrl 1" class="StyleButtonLeftBar">
+                <i class="bi bi-box"></i>
+            </button>
+            <button id="LeftBar03" data-id="All-Motoboy" title="Motoboys - Ctrl 2" class="StyleButtonLeftBar">
+                <i class="bi bi-bicycle"></i>
+            </button>
+            <button id="LeftBar04" data-id="All-Caixa" title="Cashier - Ctrl 3" class="StyleButtonLeftBar">
+                <i class="bi bi-cash-coin"></i>
+            </button>
+            <button id="LeftBar05" data-id="All-Relatorio" title="Relatorios - Ctrl 4" class="StyleButtonLeftBar">
+                <i class="bi bi-graph-up"></i>
+            </button>
+            <button id="LeftBar06" data-id="All-Cadastro" title="Cadastros - Ctrl 5" class="StyleButtonLeftBar">
+                <i class="bi bi-ui-checks"></i>
+            </button>
+        </aside>
+        <section class="CenterContent">
+            <div id="Info-Comandos" class="InfoComandos">
+                <div class="LogoText">
+                    <h1>Wikilore</h1>
+                    <p>Development</p>
+                </div>
+                <div class="AtalhosText">
+                    <div class="AtalhosComandos">
+                        <p>Novo Pedido</p>
+                        <p>Ctrl + K (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p>See All Pedidos</p>
+                        <p>Ctrl + 1 (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p>See All Motoboys</p>
+                        <p>Ctrl + 2 (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p>See All Caixa</p>
+                        <p>Ctrl + 3 (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p>See All Relatórios</p>
+                        <p>Ctrl + 4 (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p>See All Cadastros</p>
+                        <p>Ctrl + 5 (Num)</p>
+                    </div>
+                    <div class="AtalhosComandos">
+                        <p><br><br>WIKILORE Development - 04 Jun 21 - vers. 0.1</p>
+                    </div>
+                </div>
+            </div>
+            <div id="All-Pedidos" class="AllPedidos">
+                <div class="PedidosAbas">
+                    <div class="SeparacaoOne">
+                        <div data-All id="AutoAllPedidos" data-id="Area-All-Pedidos" class="AbaAllPedido">
+                            <h1>ALL</h1>
+                        </div>
+                    </div>
+                    <div title="More - Ctrl + K" data-id="Area-All-Pedidos" class="AbaMorePedido">
+                        <h1>+</h1>
+                    </div>
+                </div>
+                <div class="PedidosConfigs">
+
+                </div>
+                <div class="PedidosContents">
+                    <div id="Area-All-Pedidos" class="AreaAllPedidos">
+                        <div class="BodyPedido" style="background: rgba(0, 217, 255, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 217, 255, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 217, 255, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 255, 13, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 255, 13, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(255, 0, 0, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 217, 255, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 255, 13, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(0, 255, 13, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(255, 0, 0, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido" style="background: rgba(255, 0, 0, 0.5) !important;">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                        <div class="BodyPedido">
+                            <div class="numberBodyPedido">
+                                <span>#0</span>
+                            </div>
+                            <div class="infoClienteBodyPedido">
+                                <span>TAYNÁ GONÇALVES</span>
+                            </div>
+                            <div class="origemBodyPedido">
+                                <span>DELIVERY</span>
+                            </div>
+                            <div class="statusBodyPedido">
+                                <select name="statusBodyPedido" id="SELECTstatusBodyPedido">
+                                    <option value="EmPreparo">EM PREPARO</option>
+                                    <option value="EmEntrega">EM ENTREGA</option>
+                                    <option value="Finalizado">FINALIZADO</option>
+                                    <option value="Cancelado">CANCELADO</option>
+                                </select>
+                            </div>
+                            <div class="motoboyBodyPedido">
+                                <select name="motoboyBodyPedido" id="SELECTmotoboyBodyPedido">
+                                    <option value="">ESCOLHA / MOTOBOY</option>
+                                    <option value="BoyIsmael">Ismael</option>
+                                    <option value="BoyJorge">Jorge</option>
+                                    <option value="BoyKaue">Kaue</option>
+                                </select>
+                            </div>
+                            <div class="verificarComandaBodyPedido">
+                                <button>CONFIRIR COMANDA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="All-Motoboy" class="AllMotoboy">
+                <h1>MOTOBOY</h1>
+            </div>
+            <div id="All-Caixa" class="AllCaixa">
+                <div class="CashierFlow">
+                    <div class="ControlsCaixa">
+                        <div class="AddDespesa ButtonEfect">
+                            <p id="TextInBox">ADICIONAR DESPESA ( ALT + Q )</p>
+                        </div>
+                        <div class="AddFundoCaixa ButtonEfect">
+                            <P id="TextInBox">ADICIONAR FUNDO DE CAIXA ( ALT + W )</P>
+                        </div>
+                        <div class="ResumoCaixa ButtonEfect">
+                            <P id="TextInBox">RESUMO DE CAIXA</P>
+                        </div>
+                        <div class="FiltroData">
+                            <P id="TextInBox">FILTRO DATA!</P>
+                        </div>
+                    </div>
+                    <div class="TotalButtonsCaixa">
+                        <a href="#ContainerTotalLiquido">
+                            <div class="TotalLiquido ButtonEfect">
+                                <p id="TextInBox">R$ 0,00</p>
+                                <p id="TextInBox">TOTAL LÍQUIDO</p>
+                            </div>
+                        </a>
+                        <a href="#ContainerTotalEntrada">
+                            <div class="TotalEntrada ButtonEfect">
+                                <p id="TextInBox">R$ 0,00</p>
+                                <p id="TextInBox">TOTAL ENTRADA</p>
+                            </div>
+                        </a>
+                        <a href="#ContainerTotalSaida">
+                            <div class="TotalSaida ButtonEfect">
+                                <p id="TextInBox">R$ 0,00</p>
+                                <p id="TextInBox">TOTAL SAÍDA</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="TabelaTotalValores">
+                        <div id="ContainerTotalLiquido" class="ContainerTotalLiquido">
+                            <p style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: #3AB5E9;
+                            font-size: 40pt;
+                            ">TOTAL LÍQUIDO</p>
+                        </div>
+                        <div id="ContainerTotalEntrada" class="ContainerTotalEntrada">
+                            <div class="ControlsEntradas">
+                                <div class="EntradaDiv EntradasGeral">
+                                    <p>GERAL</p>
+                                </div>
+                                <div class="EntradaDiv EntradasDelivery">
+                                    <p>DELIVERY</p>
+                                </div>
+                                <div class="EntradaDiv EntradaUber">
+                                    <p>UBER EATS</p>
+                                </div>
+                                <div class="EntradaDiv EntradaIfood">
+                                    <p>IFOOD</p>
+                                </div>
+                                <div class="EntradaDiv EntradaSite">
+                                    <p>SITE</p>
+                                </div>
+                            </div>
+                            <div class="ContainerTotalEntradaAll">
+                                <p style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: #3AB5E9;
+                            font-size: 20pt;
+                            ">NENHUM ITEM ENCONTRADO...</p>
+                            </div>
+                        </div>
+                        <div id="ContainerTotalSaida" class="ContainerTotalSaida">
+                            <p style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: #3AB5E9;
+                            font-size: 40pt;
+                            ">TOTAL SAÍDA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="All-Relatorio" class="AllRelatorio">
+                <h1>RELATORIO</h1>
+            </div>
+            <div id="All-Cadastro" class="AllCadastro">
+                <h1>CADASTRO</h1>
+            </div>
+        </section>
+    </div>
+    <script src="./JS/WindowMain.js"></script>
+</body>
+</html>

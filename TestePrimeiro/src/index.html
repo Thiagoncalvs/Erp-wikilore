@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Logstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src="./JS/LoginMain.js"></script>
+    <title>Wikilore</title>
+</head>
+<body>
+    <div class="SlideAnimation">
+        <div class="TopBarSlide">
+            <div class="moveWindow"></div>
+        </div>
+        <div class="ContainerSlide">
+            
+        </div>
+    </div>
+    <div class="EstruturaPrincipal">
+        <header class="Cabecalho">
+            <div class="TopBar">
+                <span class="moveWindow"></span>
+                <button id="minimizeBtn" title="Minimizar"><i class="bi bi-dash-lg"></i></button>
+                <button id="maxmizeBtn" title="Maximizar"><i class="bi bi-fullscreen"></i></button>
+                <button id="closeBtn" title="Fechar"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="LogoWikiLore">
+                <div>
+                    <h1>WIKILORE</h1>
+                    <p>Development</p>
+                </div>
+            </div>
+        </header>
+        <Main class="CorpoLogin">
+            <form name="form">
+                <input type="text" name="nome" autofocus autocomplete="off" placeholder="  Login">
+                <input type="password" name="senha" autocomplete="off" placeholder="  Senha">
+                <input type="button" name="botaoEntrar" value="Enter" id="buttonEnter" onclick="acessoLog (this.form)">
+            </form>
+        </Main>
+    </div>
+</body>
+</html>

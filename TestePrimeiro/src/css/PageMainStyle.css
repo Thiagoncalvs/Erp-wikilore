@@ -1,0 +1,1458 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: red 1px dashed; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+    
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #1E222D;
+    overflow: hidden;
+}
+
+.EstruturaMain{
+    width: 100%;
+    height: 100%;
+
+    background: #1E222D;
+
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+}
+
+    .EstruturaMain .TopBar{
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        display: flex;
+        justify-content: end;
+    }
+        .EstruturaMain .TopBar .moveWindow{
+            background: none;
+            width: calc(100% - 200px);
+            -webkit-app-region: drag;
+        }
+
+        .EstruturaMain .TopBar button{
+            width: 50px;
+            background: none;
+            border: none;
+        }
+            .EstruturaMain .TopBar button i.bi{
+                font-size: 15pt;
+                color: #3A4557;
+            }
+                .EstruturaMain .TopBar button:hover i.bi{
+                    color: #3AB5E9;
+                    text-shadow: 0 0 5px #3AB5E9;
+                }
+
+            .EstruturaMain .TopBar button#logoffBtn i.bi{
+                font-size: 20pt;
+            }
+                .EstruturaMain .TopBar button#logoffBtn:hover i.bi{
+                    color: red;
+                    text-shadow: 0 0 5px red;
+                }
+    .EstruturaMain .LeftBar{
+        background: rgb(44, 52, 66);
+        grid-column: 1;
+        grid-row: 2;
+
+        display: flex;
+        flex-direction: column;
+
+        z-index: 2;
+    }
+        .EstruturaMain .LeftBar button.StyleButtonLeftBar{
+            height: 50px;
+            background: none;
+            border: none;
+            position: relative;
+        }
+            .EstruturaMain .LeftBar button.StyleButtonLeftBar:focus{
+                outline: none;
+            }
+            .EstruturaMain .LeftBar button.StyleButtonLeftBar::after{
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                content: "";
+                height: 0;
+                width: 2px;
+
+                background: #3AB5E9;
+
+                transition: 0.3s;
+            }
+                .EstruturaMain .LeftBar button.StyleButtonLeftBar:hover:after{
+                    height: 100%;
+                }
+            .EstruturaMain .LeftBar button.StyleButtonLeftBar:hover{
+                background: rgba(58, 69, 87, 0.5);
+                box-sizing: border-box;
+            }
+            .EstruturaMain .LeftBar button.StyleButtonLeftBar i.bi{
+                font-size: 20pt;
+                color: #1E222D;
+            }
+            .EstruturaMain .LeftBar button.StyleButtonLeftBar:hover i.bi{
+                color: #3AB5E9;
+                text-shadow: 0 0 5px #3AB5E9;
+            }
+            .EstruturaMain .LeftBar button.activeLeftBar{
+                background: rgba(58, 69, 87, 0.5);
+                border-left: 2px solid #3AB5E9;
+                box-sizing: border-box;
+            }
+            .EstruturaMain .LeftBar button.activeLeftBar i.bi{
+                color: #3AB5E9;
+                text-shadow: 0 0 5px #3AB5E9;
+            }
+
+
+
+
+    .EstruturaMain .CenterContent{
+        grid-column: 2;
+        grid-row: 2;
+
+        position: relative;
+
+        z-index: 1;
+    }
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+        .EstruturaMain .CenterContent .InfoComandos{
+            width: max(300px, 25vw);
+            /* background: rgba(255, 255, 0, 0.219); */
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            display: none;
+        }
+            .EstruturaMain .CenterContent .InfoComandos .LogoText{
+                color: #3A4557;
+                /* background: green; */
+            }
+                .EstruturaMain .CenterContent .InfoComandos .LogoText h1{
+                    font-size: max(60px, 6.5vw);
+                    font-family: 'Staatliches';
+                }
+                .EstruturaMain .CenterContent .InfoComandos .LogoText p{
+                    font-size: max(25px, 2.5vw);
+                }
+            .EstruturaMain .CenterContent .InfoComandos .AtalhosText{
+                /* background: green; */
+                margin-top: 50px;
+            }
+                .EstruturaMain .CenterContent .InfoComandos .AtalhosText .AtalhosComandos{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: max(15px, 1.2vw);
+                    color: #3A4557;
+
+                    margin-bottom: 5px;
+                }
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+        .AllPedidos{
+            background: none;
+            width: 100%;
+            height: 100%;
+
+            display: none;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 25px calc(100vh - 125px);
+        }
+            .AllPedidos .PedidosAbas{
+                background: rgba(58, 69, 87, 0.5);
+                display: flex;
+                flex-direction: row;
+            }
+
+                .AllPedidos .PedidosAbas h1{
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                }
+                .AllPedidos .PedidosAbas div{
+                color: #1E222D;
+                cursor: default;
+                position: relative;
+                }
+
+                .AllPedidos .PedidosAbas .SeparacaoOne{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                    .AllPedidos .PedidosAbas .SeparacaoOne div::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                content: "";
+                height: 2px;
+                width: 0;
+
+                background: #3AB5E9;
+
+                transition: 0.3s;
+                    }
+                        .AllPedidos .PedidosAbas .SeparacaoOne div:hover:after{
+                    width: 100%;
+                        }
+                    .AllPedidos .PedidosAbas .SeparacaoOne div:hover{
+                        background: rgba(58, 69, 87, 0.5);
+                        color: #3AB5E9;
+                        text-shadow: 0 0 5px #3AB5E9;
+                        box-sizing: border-box;
+                    }
+                    .AllPedidos .PedidosAbas .SeparacaoOne div.activePedidoAba{
+                        background: rgba(58, 69, 87, 0.5);
+                        color: #3AB5E9;
+                        text-shadow: 0 0 5px #3AB5E9;
+                        border-bottom: #3AB5E9 2px solid;
+                        box-sizing: border-box;
+                    }
+
+
+
+                .AllPedidos .PedidosAbas .AbaAllPedido{
+                    width: 100px;
+                    height: 50px;
+
+                    position: relative;
+                }
+                    .AllPedidos .PedidosAbas .AbaAllPedido h1{
+                        font-size: 12pt;
+                    }
+
+
+                .AllPedidos .PedidosAbas .AbaNewPedido{
+                    background: none;
+                    width: 100px;
+                    height: 50px;
+
+                    position: relative;
+                }
+                    .AllPedidos .PedidosAbas .AbaNewPedido h1{
+                        font-size: 10pt;
+                    }
+
+
+
+                .AllPedidos .PedidosAbas .AbaMorePedido{
+                    background: none !important;
+                    border: none;
+                    width: 50px;
+                    height: 50px;
+
+                    position: relative;
+                }
+                    .AllPedidos .PedidosAbas .AbaMorePedido::after{
+                        display: none;
+                    }
+                    .AllPedidos .PedidosAbas .AbaMorePedido h1{
+                        font-size: 18pt;
+                    }
+                    .AllPedidos .PedidosAbas .AbaMorePedido:hover{
+                        color: #3AB5E9;
+                        text-shadow: 0 0 5px #3AB5E9;
+                        box-sizing: border-box;
+                    }
+
+                    .AllPedidos .PedidosAbas .MoreHOVER:hover{
+                        color: red !important;
+                        text-shadow: 0 0 5px red !important;
+                    }
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+            .AllPedidos .PedidosConfigs{
+                background: none;
+            }
+            .AllPedidos .PedidosContents{
+                background: none;
+            }
+                .AllPedidos .PedidosContents .AreaAllPedidos{
+                    background: none;
+                    width: 100%;
+                    height: 98%;
+
+                    overflow: auto;
+
+                    color: #1E222D;
+                    font-weight: bold;
+                    font-size: 12pt;
+                }
+                    .AllPedidos .PedidosContents .AreaAllPedidos::-webkit-scrollbar{
+                        width: 5px;
+                    }
+                    .AllPedidos .PedidosContents .AreaAllPedidos::-webkit-scrollbar-thumb{
+                        background: #3ab5e9;
+                    }
+                .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido{
+                    background: rgba(58, 69, 87, 0.5);
+
+                    width: 100%;
+                    height: 100px;
+
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    cursor: default;
+                }
+                    .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido + .BodyPedido{
+                        margin-top: 5px;
+                    }
+                    .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido select{
+                        background: none;
+                        border: none;
+                        color: #1E222D;
+                        font-weight: bold;
+                        font-size: 12pt;
+                    }       
+                        .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido select:focus{
+                            outline: none;
+                        }
+                    .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido select option{
+                        background: rgb(58, 69, 87);
+                        color: #3AB5E9;
+                        font-weight: bold;
+                    }
+                    .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido button{
+                        position: relative;
+
+                        background: none;
+                        border: none;
+                        color: #1E222D;
+                        font-weight: bold;
+                        font-size: 12pt;
+                    }
+                        .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido button::after{
+                            position: absolute;
+                            bottom: -5px;
+                            left: 0;
+
+                            content: "";
+                            height: 2px;
+                            width: 0%;
+                            
+                            background: #1E222D;
+
+                            transition: 0.3s;
+                        }
+                            .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido button:hover::after{
+                                width: 100%;
+                            }
+                    .AllPedidos .PedidosContents .AreaAllPedidos .BodyPedido button:focus{
+                        outline: none;
+                    }
+
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+
+        .AreaNewPedido{
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 55px calc(100vh - 180px);
+        }
+            .AreaNewPedido .ButtonToDoPedido{
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start;
+
+                z-index: 3;
+            }
+                .AreaNewPedido .ButtonToDoPedido div{
+                    background: #2c3442;
+                    width: calc(100vw / 3 - 50px);
+                    height: 50px;
+
+                    position: relative;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                 .AreaNewPedido .ButtonToDoPedido .ThisButton .InfoComando{
+                     background: none;
+                     position: absolute;
+                     top: -3px;
+                     left: 50%;
+                     transform: translate(-50%, -100%);
+
+                     display: flex;
+                     justify-content: space-around;
+                     width: 80%;
+                     height: auto;
+                 }
+                 .AreaNewPedido .ButtonToDoPedido .ThisButton .InfoComando p{
+                    color: #3A4557 !important;
+                    font-size: 12pt;
+                    position: static;
+                    text-shadow: none !important;
+
+                    cursor: default;
+                 }
+                 .AreaNewPedido .ButtonToDoPedido .ThisButton p{
+                     color: #1E222D;
+                     font-weight: bold;
+                     font-size: 18pt;
+
+                     cursor: default;
+                 }
+                 .AreaNewPedido .ButtonToDoPedido .ThisButton p + p{
+                     font-size: 20pt;
+                     
+                     position: absolute;
+                     right: 20px;
+                 }
+                    .AreaNewPedido .ButtonToDoPedido .ThisButton p + p:hover{
+                        color: #3AB5E9;
+                        text-shadow: 0 0 5px #3AB5E9;
+                        transition: 0.3s;
+                    }
+
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+
+            .AreaNewPedido .CorpoFromPedido{
+                display: flex;
+                justify-content: space-around;
+                /* align-items: center; */
+                z-index: 2;
+            }
+
+                        .AreaNewPedido .ButtonToDoPedido .ThisButton p:hover .bi-x-square{
+                            color: red;
+                            text-shadow: 0 0 5px red;
+                        }
+
+                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente{
+                            background: #2c3442;
+                            width: calc(100vw / 3 - 50px);
+                            height: calc(100vh - 190px);
+
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyActive{
+                                opacity: 1;
+                                pointer-events: unset;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyNegative{
+                                opacity: 0;
+                                pointer-events: none;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ClientePesquisa{
+                                background: #1E222D;
+                                position: relative;
+                                margin: 5px auto;
+                                width: 95%;
+                                height: 50px;
+                            }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ClientePesquisa .SearchCliente::placeholder{
+                            color: #3A4557;
+                                }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ClientePesquisa .SearchCliente{
+                            border: none;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        
+                            background: none;
+                            color: #3A4557;
+                            font-size: 12pt;
+                            font-weight: bold;
+                        
+                            width: 95%;
+                            height: 60%;
+                                }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ClientePesquisa .SearchCliente:focus{
+                            outline: none;
+                            color: #3AB5E9;
+                                }
+                            .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente{
+                                margin: 5px auto;
+                                height: calc(100% - 60px);
+                                width: 95%;
+                                /* display: none; */
+                            }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .ClienteName{
+                                    position: relative;
+                                    background: none;
+                                    margin: 5px auto;
+                                    width: 100%;
+                                    height: 100px;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .ClienteName span{
+                                position: absolute;
+                                top: 50%;
+                                left: 5px;
+                                transform: translateY(-50%);
+
+                                color: #1E222D;
+                                font-weight: bold;
+                                font-size: 15pt;
+                                transition: 0.3s;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente:hover .ContainerExclusiveCliente .ClienteName span{
+                                color: #3AB5E9;
+                                transition: 0.3s;
+                                    }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber{
+                                    background: #1E222D;
+                                    position: relative;
+                                    cursor: default;
+                                    margin: 5px auto;
+                                    width: 100%;
+                                    height: 50px;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber select{
+                                border: none;
+                                background: none;
+                                position: absolute;
+                                top: 50%;
+                                left: 43%;
+                                transform: translate(-50%, -50%);
+
+                                width: 80%;
+                                height: 70%;
+
+                                font-size: 12pt;
+                                color: #3AB5E9;
+                                font-weight: bold;
+
+                                transition: 0.3s;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber:hover select{
+                                text-shadow: 0 0 5px #3AB5E9;
+                                transition: 0.3s;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber .AddNewNumberCliente{
+                                background: none;
+
+                                position: absolute;
+                                top: 50%;
+                                right: 5px;
+                                transform: translateY(-50%);
+
+                                width: 40px;
+                                height: 40px;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber .AddNewNumberCliente p{
+                                text-align: center;
+                                font-size: 25pt;
+                                font-weight: bold;
+                                color: #3A4557;
+
+                                /* background: green; */
+
+                                width: 100%;
+                                
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+
+                                transition: 0.3s;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AllClienteNumber:hover .AddNewNumberCliente p{
+                                    color: #3AB5E9;
+                                    text-shadow: 0 0 5px#3AB5E9;
+                                    transition: 0.3s;
+                                        }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .EditClienteInCadastro{
+                                    width: 100%;
+                                    height: 30px;
+                                    margin: 5px auto;
+                                    background: #1E222D;
+
+                                    position: relative;
+                                    cursor: default;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .EditClienteInCadastro p{
+                                position: absolute;
+                                top: 50%;
+                                left: 10px;
+                                transform: translateY(-50%);
+
+                                font-weight: bold;
+                                font-size: 12pt;
+                                color: #3A4557;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .EditClienteInCadastro:hover p{
+                                color: #3AB5E9;
+                                    }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente{
+                                    background: none;
+                                        
+                                    margin: 5px auto;
+                                    max-height: calc(100% - 255px);
+                                    height: auto;
+                                    width: 100%;
+                                        
+                                    overflow: auto;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente::-webkit-scrollbar{
+                                width: 5px;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente::-webkit-scrollbar-track{
+                                background: #1E222D;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente::-webkit-scrollbar-thumb{
+                                background: #3AB5E9;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente .CadastroClienteComanda{
+                                width: auto;
+                                height: 100px;
+                                background: #1E222D;
+                                border: 1.8px solid #1E222D;
+                                box-sizing: border-box;
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente #EnderecoLigado{
+                                    border: 1.8px solid #3AB5E9;
+                                    box-shadow: inset 0 0 5px #3AB5E9;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente #EnderecoLigado p{
+                                    color: #3AB5E9;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente .CadastroClienteComanda:hover{
+                                    border: 1.8px solid #3AB5E9;
+                                    box-shadow: inset 0 0 5px #3AB5E9;
+                                        }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente .CadastroClienteComanda + .CadastroClienteComanda{
+                                margin-top: 5px;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente .CadastroClienteComanda p{
+                                    margin-left: 10px;
+                                    font-size: 10pt;
+                                    color: #3A4557;
+                                    font-weight: bold;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AlladdressCliente .CadastroClienteComanda:hover       p{
+                                    color: #3AB5E9;
+                                        }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AddNewAddre{
+                                    height: 35px;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    background: #1E222D;
+
+                                    margin: 5px auto;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AddNewAddre p{
+                                color: 12px;
+                                font-weight: bold;
+                                color: #3A4557;
+                                margin-left: 5px;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisCliente .ContainerExclusiveCliente .AddNewAddre:hover p{
+                                    color: #3AB5E9;
+                                        }
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido{
+                        background: rgba(58, 69, 87, 0.5);
+                        width: calc(100vw / 3 - 50px);
+                        height: calc(100vh - 190px);
+                    }
+                    
+                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ItemPesquisa{
+                        position: relative;
+                        margin: 5px auto;
+                        background: #1E222D;
+                        width: calc(100vw / 3 - 70px);
+                        height: 50px;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ItemPesquisa .SearchItem{
+                            border: none;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        
+                            background: none;
+                            color: #3A4557;
+                            font-size: 12pt;
+                            font-weight: bold;
+                        
+                            width: 95%;
+                            height: 60%;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ItemPesquisa .SearchItem::placeholder{
+                            color: #3A4557;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ItemPesquisa .SearchItem:focus{
+                            outline: none;
+                            color: #3AB5E9;
+                        }
+                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens{
+                        background: none;
+
+                        margin: 5px auto;
+                        width: calc(100vw / 3 - 70px);
+                        height: 300px;
+
+                        overflow: auto;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens::-webkit-scrollbar{
+                            width: 5px;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens::-webkit-scrollbar-track{
+                            background: #1E222D;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens::-webkit-scrollbar-thumb{
+                            background: #3AB5E9;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem{
+                            background: #1E222D;
+
+                            width: 100%;
+                            height: 50px;
+
+                            overflow: hidden;
+
+                            display: grid;
+                            grid-template-columns: 100%;
+                            grid-template-rows: 50px calc(100% - 50px);
+
+                            margin-bottom: 5px;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .InfoMainItem{
+                                display: flex;
+                                width: 100%;
+                                height: 100%;
+                                background: none;
+                            }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .InfoMainItem > *{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    font-size: 12pt;
+                                    color: #3AB5E9;
+                                    font-weight: bold;
+                                    cursor: default;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem:hover .InfoMainItem > *{
+                                        text-shadow: #3AB5E9 0 0 5px;
+                                    }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .InfoMainItem .QTDItem{
+                                    background: none;
+                                    width: 40px;
+                                    height: 100%;
+                                }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .InfoMainItem .ClassOfItem{
+                                    background: none;
+                                    width: calc(100% - 140px);
+                                    height: 100%;
+                                }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .InfoMainItem .ValorTotalItem{
+                                    background: none;
+                                    width: 100px;
+                                    height: 100%;
+                                }
+                            .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem{
+                                width: 100%;
+                                height: 100%;
+                                background: none;
+
+                                display: none;
+                                grid-template-columns: 50px calc(100% - 50px);
+                                grid-template-rows: 50% 20% 30%;
+                                
+                            }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EditQTDItem{
+                                    background: none;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    text-align: center;
+
+                                    grid-column: 1;
+                                    grid-row: 1 / 3;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EditQTDItem .ValorEditQTDItem{
+                                        width: 100%;
+                                        height: 50%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: flex-end;
+                                        background: none;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EditQTDItem .ValorEditQTDItem input{
+                                            width: 60%;
+                                            height: 60%;
+                                            text-align: center;
+                                            background: none;
+                                            border: 1px solid #3A4557;
+                                            color: #3AB5E9;
+                                            font-weight: bold;
+                                            font-size: 15pt;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EditQTDItem .ValorEditQTDItem input::placeholder{
+                                            color: #3A4557;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EditQTDItem span#TextEditQTDItem{
+                                            color: #3A4557;
+                                            font-weight: bold;
+                                            font-size: 10pt;
+                                            cursor: default;
+                                        }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EspecificInfoIte{
+                                    background: none;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: center;
+                                    align-items: center;
+                                    
+                                    grid-column: 2;
+                                    grid-row: 1;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EspecificInfoIte span{
+                                        font-size: 12pt;
+                                        font-weight: bold;
+                                        color: #3A4557;
+                                        width: 100%;
+                                        text-transform: uppercase;
+                                    }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .EspecificInfoIte span + span{
+                                        font-size: 10pt;
+                                        text-align: center;
+                                        height: 50%;
+                                        word-wrap: break-word;
+                                    }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .CommentItem{
+                                    background: none;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    grid-column: 2;
+                                    grid-row: 2;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .CommentItem input{
+                                        width: 95%;
+                                        height: 80%;
+                                        border: 1px solid #3A4557;
+                                        color: #3A4557;
+                                        background: none;
+                                    }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .CommentItem input::placeholder{
+                                            color: #3A4557;
+                                        }
+                                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .CommentItem input:focus{
+                                            outline: none;
+                                            color: #3AB5E9;
+                                            font-weight: bold;
+                                        }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .ContainerDeleteItem{
+                                    background: none;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    grid-column: 1 / -1;
+                                    grid-row: 3;
+                                }
+                                .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .ContainerDeleteItem .ButtonDeleteItem{
+                                    background: none;
+                                    width: 50%;
+                                    height: 60%;
+                                    
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    border: #3AB5E9 1px solid;
+                                    box-shadow: #3AB5E9 0 0 3px;
+                                    color: #3AB5E9;
+                                    font-weight: bold;
+                                    cursor: default;
+
+                                    transition: 0.3s;
+                                }
+                                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerItens .BoxTheItem .OthersInfoItem .ContainerDeleteItem .ButtonDeleteItem:hover{
+                                        border: red 1px solid;
+                                        box-shadow: red 0 0 3px;
+                                        color: red;
+                                        transition: 0.3s;
+                                    }
+                    .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerEspecificComanda{
+                        position: relative;
+                        margin: 5px auto;
+                        background: #1E222D;
+                        width: calc(100vw / 3 - 70px);
+                        height: calc(100% - 370px);
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerEspecificComanda textarea{
+                            max-width: 95%;
+                            max-height: 95%;
+                            min-width: 95%;
+                            min-height: 95%;
+                            color: #3A4557;
+                            background: none;
+                            border: none;
+                            font-size: 12pt;
+                            max-lines: 15;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerEspecificComanda textarea::placeholder{
+                            color: #3A4557;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThisPedido .ContainerEspecificComanda textarea:focus{
+                            color: #3AB5E9;
+                            outline: none !important;
+                        }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+                    .AreaNewPedido .CorpoFromPedido .BodyThePagamento{
+                        background: rgba(58, 69, 87, 0.5);
+                        width: calc(100vw / 3 - 50px);
+                        height: calc(100vh - 190px);
+                    }
+                    .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores{
+                        background: none;
+                        width: 100%;
+                        height: calc(100% / 2 - 50px);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores span{
+                            color: #3AB5E9;
+                            font-weight: bold;
+                            font-size: 14pt;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores p{
+                            color: #3A4557;
+                            font-weight: bold;
+                            font-size: 12pt;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .marginTheLeft{
+                            margin-left: 20%;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalProdut{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalProdut .TotalValor{
+                                background: #1E222D;
+                                width: calc(100% - 100px);
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalProdut .TotalText{
+                                background: #1E222D;
+                                width: 100px;
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TaxaEntrega{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TaxaEntrega .TaxaText{
+                                background: #1E222D;
+                                width: calc(100% - 100px);
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TaxaEntrega .TaxaValor{
+                                background: #1E222D;
+                                width: 100px;
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalReceber{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+                            
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalReceber .ReceberValor{
+                                background: #1E222D;
+                                width: calc(100% - 100px);
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TotalReceber .ReceberText{
+                                background: #1E222D;
+                                width: 100px;
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TrocoCoin{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TrocoCoin .TrocoVal{
+                                background: #1E222D;
+                                width: calc(100% - 100px);
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayValores .TrocoCoin .TrocoText{
+                                background: #1E222D;
+                                width: 100px;
+                                height: calc(100% - 5px);
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                    .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm{
+                        background: none;
+                        width: 100%;
+                        height: calc(100% / 2 - 50px);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm #CaixaInput{
+                            width: 50%;
+                            height: 50%;
+                            background: none;
+                            border: none;
+                            font-size: 12pt;
+                            font-weight: bold;
+                            color: #3AB5E9;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm #CaixaInput::placeholder{
+                                color: #1E222D;
+                                padding-left: 20px;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm #CaixaInput:focus{
+                                outline: none;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm #CaixaText{
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            font-size: 12pt;
+                            font-weight: bold;
+                            color: #1E222D;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .RecebidoEspecie{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            border-bottom: #1E222D 5px solid;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PayCredDeb{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PayCredDeb .PayCred{
+                                background: none;
+                                height: 100%;
+                                width: calc(50% - calc(5px / 2));
+                                border-bottom: #1E222D 5px solid;
+
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PayCredDeb .PayDeb{
+                                background: none;
+                                height: 100%;
+                                width: calc(50% - calc(5px / 2));
+                                border-bottom: #1E222D 5px solid;
+
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PaySocioTransfe{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PaySocioTransfe .TransferenciaPay{
+                                background: none;
+                                height: 100%;
+                                width: calc(50% - calc(5px / 2));
+                                border-bottom: #1E222D 5px solid;
+
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PaySocioTransfe .ConsumoSocio{
+                                background: none;
+                                height: 100%;
+                                width: calc(50% - calc(5px / 2));
+                                border-bottom: #1E222D 5px solid;
+
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                            }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaPayForm .PayPix{
+                            background: none;
+                            width: 95%;
+                            height: calc(100% / 4);
+
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            border-bottom: #1E222D 5px solid;
+                        }
+                    .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaBotaoPay{
+                        background: none;
+                        width: 100%;
+                        height: 100px;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaBotaoPay .BotaoPay{
+                            background: #3AB5E9;
+                            width: 95%;
+                            height: 50%;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            color: #1E222D;
+                            font-weight: bold;
+                        }
+                        .AreaNewPedido .CorpoFromPedido .BodyThePagamento .AreaBotaoPay .BotaoPay:hover{
+                            box-shadow: 0 0 5px #3AB5E9;
+                        }
+
+/* ////////////////////////////////////////////////////////////////////// */
+
+.EstruturaMain .CenterContent .AllCaixa{
+    width: 100%;
+    height: 100%;
+
+    display: none;
+}
+    .EstruturaMain .CenterContent .CashierFlow{
+        width: calc(100% - 10px);
+        height: calc(100% - 5px);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 55px 105px calc(100% - 160px);
+    }
+        .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa{
+            width: 100%;
+            height: calc(100% - 5px);
+
+            display: grid;
+            grid-template-columns: repeat(3, calc(90% / 3)) 10%;
+            grid-template-rows: 100%;
+
+            cursor: default;
+        }
+            .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa #TextInBox{
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: max(9pt, 1.1vw);
+                text-align: center;
+                width: 100%;
+                color: #3AB5E9;
+            }
+                .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .ButtonEfect:hover{
+                    box-shadow: 0 0 5px #3AB5E9;
+                    background: #3AB5E9;
+                }
+                    .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .ButtonEfect:hover #TextInBox{
+                        color: #1E222D;
+                    }
+            .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .AddDespesa{
+                width: calc(100% - 2.5px);
+                height: 100%;
+                justify-self: start;
+                border-radius: 10px;
+                position: relative;
+                border: 1px solid #3AB5E9;
+            }
+            .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .AddFundoCaixa{
+                width: calc(100% - 5px);
+                height: 100%;
+                justify-self: center;
+                border-radius: 10px;
+                position: relative;
+                border: 1px solid #3AB5E9;
+            }
+            .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .ResumoCaixa{
+                width: calc(100% - 5px);
+                height: 100%;
+                background: #3AB5E9;
+                justify-self: center;
+                border-radius: 10px;
+                position: relative;
+            }
+                .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .ResumoCaixa #TextInBox{
+                    color: #1E222D;
+                }
+                    .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .ResumoCaixa:hover #TextInBox{
+                        font-size: 1.2vw;
+                    }
+            .EstruturaMain .CenterContent .CashierFlow .ControlsCaixa .FiltroData{
+                width: calc(100% - 2.5px);
+                height: 100%;
+                justify-self: end;
+                border-radius: 10px;
+                border: 1px solid #3A4557;
+            }
+        .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa{
+            width: 100%;
+            height: calc(100% -  5px);
+
+            display: grid;
+            grid-template-columns: repeat(3, calc(100% / 3));
+            grid-template-rows: 100%;
+        }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa #TextInBox{
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: max(15pt, 2.3vw);
+                text-align: center;
+                width: 100%;
+                height: 50%;
+                color: #3AB5E9;
+            }
+                .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa #TextInBox + #TextInBox{
+                    color: #3A4557;
+                    font-size: max(15pt, 1.8vw);
+                }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa .ButtonEfect:hover{
+                background: #3A4557;
+            }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa .ButtonEfect:hover #TextInBox + #TextInBox{
+                color: #1E222D;
+            }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa .TotalLiquido{
+                width: calc(100% - 2.5px);
+                height: 100%;
+                border-radius: 10px;
+                justify-self: start;
+                position: relative;
+                border: 1px solid #3A4557;
+
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(2, 50%);
+            }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa .TotalEntrada{
+                width: calc(100% - 5px);
+                height: 100%;
+                border-radius: 10px;
+                justify-self: center;
+                position: relative;
+                border: 1px solid #3A4557;
+
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(2, 50%);
+            }
+            .EstruturaMain .CenterContent .CashierFlow .TotalButtonsCaixa .TotalSaida{
+                width: calc(100% - 2.5px);
+                height: 100%;
+                border-radius: 10px;
+                justify-self: end;
+                position: relative;
+                border: 1px solid #3A4557;
+
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(2, 50%);
+            }
+        .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores{
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: repeat(3, 100%);
+            grid-template-rows: 100%;
+
+            overflow: hidden;
+        }
+            .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalLiquido{
+                background: none;
+                width: 100%;
+                height: 100%;
+
+                position: relative;
+            }
+            .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada{
+                background: none;
+                width: 100%;
+                height: 100%;
+
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 50px calc(100% - 50px);
+
+                position: relative;
+            }
+                .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada .ControlsEntradas{
+                    width: 100%;
+                    height: 100%;
+                    
+                    display: grid;
+                    grid-template-columns: repeat(5, calc(100% / 5));
+                    grid-template-rows: 100%;
+
+                    background: #2c3442;
+                }
+                    .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv{
+                        width: 100%;
+                        height: 100%;
+                        justify-self: center;
+                        position: relative;
+                    }
+                        .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv p{
+                            color: #1E222D;
+                            
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                            .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv:hover p{
+                                color: #3AB5E9;
+                            }
+                        .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv::after{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+            
+                            content: "";
+                            height: 2px;
+                            width: 0;
+            
+                            background: #3AB5E9;
+            
+                            transition: 0.3s;
+                        }
+                            .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv:hover:after{
+                                width: 100%;
+                            }
+                        .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada  .ControlsEntradas .EntradaDiv:hover{
+                            background: #3A4557;
+                        }
+                .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalEntrada .ContainerTotalEntradaAll{
+                    width: 100%;
+                    height: 100%;
+                }
+            .EstruturaMain .CenterContent .CashierFlow .TabelaTotalValores .ContainerTotalSaida{
+                background: none;
+                width: 100%;
+                height: 100%;
+
+                position: relative;
+            }

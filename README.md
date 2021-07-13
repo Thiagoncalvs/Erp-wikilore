@@ -2,7 +2,7 @@
 
 These are the technologies used in this project.
 
-## On the front-end:
+On the front-end:
 ```
 * HTML
 * CSS

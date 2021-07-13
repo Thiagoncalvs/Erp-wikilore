@@ -8,3 +8,9 @@ These are the technologies used in this project.
 * CSS
 * JS
 ```
+## On the back-end
+```
+* NodeJS
+* npm
+* Express
+```

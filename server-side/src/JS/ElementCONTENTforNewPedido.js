@@ -1,8 +1,6 @@
-const PedidosContents = document.querySelector('.PedidosContents')
-const SeparacaoOne = document.querySelector('.SeparacaoOne')
-const AreaAllPedidos = document.querySelector('.AreaAllPedidos')
 
-const AddNewContentofPedidoELEMENTvar = ()=>{
+
+export const AddNewContentofPedidoELEMENT = ()=>{
     const NumberId = SeparacaoOne.children.length - 1
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -501,5 +499,3 @@ const AddNewContentofPedidoELEMENTvar = ()=>{
  TabNavigationForPedidosAbaGGG.iniciar()
 
 }
-
-module.exports = AddNewContentofPedidoELEMENTvar

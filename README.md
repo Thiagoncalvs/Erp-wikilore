@@ -13,4 +13,11 @@ On the back-end
 * NodeJS
 * npm
 * Express
+* ElectronJS
+* Json
+```
+Protocolos usados
+```
+* HTTP
+* NFS
 ```

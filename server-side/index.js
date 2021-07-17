@@ -12,7 +12,7 @@ async function createWindow() {
         frame: false,
         resizable: true,
         show: false,
-        backgroundColor: '#1E222D',
+        backgroundColor: 'white',//'#1E222D'
         webPreferences:{
             nodeIntegration: true,
             contextIsolation: false,
@@ -20,24 +20,25 @@ async function createWindow() {
         }
     })
 
-    mainWindow.loadFile('./src/index.html')
+    // mainWindow.loadFile('./src/PageMain.html')
+    mainWindow.loadURL('http://localhost:2698/')
+    // mainWindow.loadURL('http://youtube.com/')
 
     mainWindow.on('ready-to-show', () => {
         mainWindow.show()
     })
-
+    
+ ////////////////////////////////////////////////////////////////////////////////
     // MINIMIZE WINDOW
     ipc.on('minimizeApp', () => {
         console.log('MINIMIZADO')
         mainWindow.minimize()
     })
-
     // CLOSE WINDOW
     ipc.on('closeApp', () => {
         console.log('FECHADO')
         mainWindow.close()
     })
-
     // MAXIMIZE WINDOW
     ipc.on('maximizeRestoreApp', () => {
 
@@ -49,7 +50,7 @@ async function createWindow() {
             mainWindow.maximize()   
         }
     })
-
+ ////////////////////////////////////////////////////////////////////////////////
 
 }
 

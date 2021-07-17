@@ -1,15 +1,15 @@
 {
-  "name": "server-side",
+  "name": "client-side",
   "version": "1.0.0",
   "description": "",
-  "main": "configserver.js",
+  "main": "index.js",
   "scripts": {
-    "startserver": "nodemon configserver.js"
+    "startsistem": "electron ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "electron": "^13.1.7"
   }
 }

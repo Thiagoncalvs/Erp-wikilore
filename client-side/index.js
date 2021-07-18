@@ -5,9 +5,9 @@ const ipc = ipcMain
 var mainWindow = null
 async function createWindow() {
     mainWindow = new BrowserWindow({
-        width:400,
+        width:800,
         height:600,
-        minWidth:400,
+        minWidth:800,
         minHeight:600,
         frame: false,
         resizable: true,

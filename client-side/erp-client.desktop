@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=wikilore
+Comment=Erp Sistem from Wikilore Development
+Exec=/home/thiago-s-goncalves/Documents/ThiagoncalvsPC/erp-wikilore/client-side/erp-script.sh
+Icon=/home/thiago-s-goncalves/Documents/ThiagoncalvsPC/erp-wikilore/client-side/img/documento.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;

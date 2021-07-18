@@ -1,0 +1,1 @@
+cd Documents/ThiagoncalvsPC/erp-wikilore/client-side/ ; npm run startsistem

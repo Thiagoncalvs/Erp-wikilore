@@ -151,22 +151,26 @@ function AddNewTABofPedidoELEMENT(){
 
     const NewPedidoAba = document.createElement("div")
     const TituloNewPedidoAba = document.createElement("h1")
+    const CloseTabNewPedidoAba = document.createElement('i')
 
-    TituloNewPedidoAba.textContent = 'New Pedido ' + NumberId
 
     NewPedidoAba.setAttribute('id', 'NewPedido-' + NumberId)
     NewPedidoAba.setAttribute('data-id', 'Area-New-Pedido-' + NumberId)
-    NewPedidoAba.setAttribute('title', 'Shift + ' + NumberId)
-    NewPedidoAba.classList.add('AbaNewPedido')
+    NewPedidoAba.setAttribute('class','AbaNewPedido setDivs')
 
+    TituloNewPedidoAba.textContent = 'New Pedido ' + NumberId
+
+    CloseTabNewPedidoAba.setAttribute('class', 'bi closetab bi-x-lg')
+    CloseTabNewPedidoAba.setAttribute('id', 'closetab-' + NumberId)
+    CloseTabNewPedidoAba.setAttribute('title', 'Close Orden')
     
 
     if (SeparacaoOne.children.length <= 7) {
         let parentAll = AllPedido.parentNode
         parentAll.append(NewPedidoAba)
-        NewPedidoAba.append(TituloNewPedidoAba)
+        NewPedidoAba.append(TituloNewPedidoAba, CloseTabNewPedidoAba)
     } else{
-        AbaMorePedido.className = 'AbaMorePedido MoreHOVER'
+        AbaMorePedido.className = 'AbaMorePedido setDivs MoreHOVER'
     } 
 
     const TabNavigationForPedidosAbaGGG = TabNavigationForPedidosAba()
@@ -679,7 +683,6 @@ AbaMorePedido.addEventListener('click', ()=>{
     AddNewTABofPedidoELEMENT()
     AddNewContentofPedidoELEMENT()
 
-    const NumberId = SeparacaoOne.children.length - 1
 
 
     if (SeparacaoOne.children.length > 0) {
@@ -687,6 +690,7 @@ AbaMorePedido.addEventListener('click', ()=>{
     }
 
 })
+
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -712,8 +716,6 @@ function ShortcutLeftBar(key) {
     const ClienteFive = document.querySelector('#NewPedido-5')
     const ClienteSix = document.querySelector('#NewPedido-6')
     const ClienteSeven = document.querySelector('#NewPedido-7')
-
-    console.log(ClienteThree)
 
     if (key.ctrlKey && key.keyCode == "96") {//ctrl 0 - HOME
         ControlOne.click()

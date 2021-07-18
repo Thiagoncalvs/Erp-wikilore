@@ -122,6 +122,9 @@ body{
                 color: #3AB5E9;
                 text-shadow: 0 0 5px #3AB5E9;
             }
+                .EstruturaMain .LeftBar button.StyleButtonLeftBar.activeLeftBar::after{
+                    background: none;
+                }
 
 
 
@@ -189,14 +192,7 @@ body{
                 flex-direction: row;
             }
 
-                .AllPedidos .PedidosAbas h1{
-                text-align: center;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                }
-                .AllPedidos .PedidosAbas div{
+                .AllPedidos .PedidosAbas .setDivs{
                 color: #1E222D;
                 cursor: default;
                 position: relative;
@@ -207,35 +203,38 @@ body{
                     flex-direction: row;
                 }
 
-                    .AllPedidos .PedidosAbas .SeparacaoOne div::after{
-                position: absolute;
-                bottom: 0;
-                left: 0;
+                    .AllPedidos .PedidosAbas .SeparacaoOne .setDivs::after{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
 
-                content: "";
-                height: 2px;
-                width: 0;
+                        content: "";
+                        height: 2px;
+                        width: 0;
 
-                background: #3AB5E9;
+                        background: #3AB5E9;
 
-                transition: 0.3s;
+                        transition: 0.3s;
                     }
-                        .AllPedidos .PedidosAbas .SeparacaoOne div:hover:after{
-                    width: 100%;
+                        .AllPedidos .PedidosAbas .SeparacaoOne .setDivs:hover:after{
+                            width: 100%;
                         }
-                    .AllPedidos .PedidosAbas .SeparacaoOne div:hover{
+                    .AllPedidos .PedidosAbas .SeparacaoOne .setDivs:hover{
                         background: rgba(58, 69, 87, 0.5);
                         color: #3AB5E9;
                         text-shadow: 0 0 5px #3AB5E9;
                         box-sizing: border-box;
                     }
-                    .AllPedidos .PedidosAbas .SeparacaoOne div.activePedidoAba{
+                    .AllPedidos .PedidosAbas .SeparacaoOne .setDivs.activePedidoAba{
                         background: rgba(58, 69, 87, 0.5);
                         color: #3AB5E9;
                         text-shadow: 0 0 5px #3AB5E9;
                         border-bottom: #3AB5E9 2px solid;
                         box-sizing: border-box;
                     }
+                        .AllPedidos .PedidosAbas .SeparacaoOne .setDivs.activePedidoAba::after{
+                            background: none;
+                        }
 
 
 
@@ -247,20 +246,42 @@ body{
                 }
                     .AllPedidos .PedidosAbas .AbaAllPedido h1{
                         font-size: 12pt;
+                        text-align: center;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
                     }
 
 
                 .AllPedidos .PedidosAbas .AbaNewPedido{
+                    
                     background: none;
-                    width: 100px;
+                    width: 155px;
                     height: 50px;
 
                     position: relative;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
                 }
                     .AllPedidos .PedidosAbas .AbaNewPedido h1{
                         font-size: 10pt;
+                        width: calc(100% - 25px);
+                        text-align: center;
                     }
-
+                    .AllPedidos .PedidosAbas .AbaNewPedido .closetab{
+                        color: #1E222D;
+                        text-shadow: none;
+                        width: 25px;
+                        font-size: 10pt;
+                    }
+                        .AllPedidos .PedidosAbas .AbaNewPedido .closetab:hover{
+                            color: red;
+                            text-shadow: red 0 0 5px;
+                        }
 
 
                 .AllPedidos .PedidosAbas .AbaMorePedido{
@@ -276,6 +297,11 @@ body{
                     }
                     .AllPedidos .PedidosAbas .AbaMorePedido h1{
                         font-size: 18pt;
+                        text-align: center;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
                     }
                     .AllPedidos .PedidosAbas .AbaMorePedido:hover{
                         color: #3AB5E9;

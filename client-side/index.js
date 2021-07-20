@@ -12,7 +12,7 @@ async function createWindow() {
         frame: false,
         resizable: true,
         show: false,
-        backgroundColor: 'white',//'#1E222D'
+        backgroundColor: '#1E222D',
         webPreferences:{
             nodeIntegration: true,
             contextIsolation: false,

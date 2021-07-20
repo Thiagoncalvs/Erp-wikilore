@@ -163,7 +163,7 @@ function AddNewTABofPedidoELEMENT(){
     CloseTabNewPedidoAba.setAttribute('class', 'bi closetab bi-x-lg')
     CloseTabNewPedidoAba.setAttribute('id', 'closetab-' + NumberId)
     CloseTabNewPedidoAba.setAttribute('title', 'Close Orden')
-    
+
 
     if (SeparacaoOne.children.length <= 7) {
         let parentAll = AllPedido.parentNode
@@ -178,6 +178,7 @@ function AddNewTABofPedidoELEMENT(){
     TabNavigationForPedidosAbaGGG.iniciar()
 
 }
+
 
 function AddNewContentofPedidoELEMENT(){
     const NumberId = SeparacaoOne.children.length - 1
@@ -690,7 +691,6 @@ AbaMorePedido.addEventListener('click', ()=>{
     }
 
 })
-
 
 
 ///////////////////////////////////////////////////////////////////////////

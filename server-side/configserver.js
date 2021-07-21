@@ -2,7 +2,6 @@ const serverhttp = require('http')
 const filefs = require('fs')
 const thepath = require('path')
 
-
 serverhttp.createServer((req, res) =>{
 
    const thefile = req.url === '/' ? 'index.html' : req.url

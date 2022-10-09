@@ -25,7 +25,9 @@ const client = new MongoClient(uri)
         const produto = await cardapio.find(query)
 
         await produto.forEach(i =>{
-            console.log(i)
+            // console.log(i)
+            let testtt = {i}
+            
         })
         
 
